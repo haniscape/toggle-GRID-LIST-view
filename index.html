@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <title>Task-1 Grid and List View</title>
+</head>
+
+<body>
+  <div class="wrapper">
+
+
+    <!--start  HEADER area -->
+    <header>
+      <h2>Books</h2>
+      <ul>
+        <li data-view="grid-view" class="li-grid active">
+          <span class="material-icons"> view_comfy </span>
+        </li>
+        <li data-view="list-view" class="li-list">
+          <span class="material-icons"> view_list </span>
+        </li>
+      </ul>
+    </header>
+
+
+
+
+
+    <!-- Start BOOKS VIEW -->
+    <main>
+      <div class="books grid-view">
+
+        <div class="book-box">
+          <div class="cover">
+            <img src="book-cover.jpg" alt="apple" />
+          </div>
+          <div class="text">
+            <p class="title">The Wizard of Oz</p>
+            <blockquote>
+              Dorothy found herself riding easily between two of the biggest Monkeys, one of them the King himself.
+              They had made a chair of their hands and were careful not to hurt her.
+              "Why do you have to obey the charm of the Golden Cap?"
+            </blockquote>
+            <p class="author">L. Frank Baum</p>
+          </div>
+          <div class="user">
+            <div class="likes">
+              <span class="material-icons">
+                star_rate
+              </span>
+              <p>16</p>
+            </div>
+            <div class="edit" onclick="subMenu('edit');">
+              <span class="material-icons">
+                more_horiz
+              </span>
+            </div>
+            <div class="sub-menu">sadkfszxgjxdjh</div>
+
+
+          </div>
+        </div>
+
+
+        <div class="book-box">
+          <div class="cover">
+            <img src="book-cover.jpg" alt="apple" />
+          </div>
+          <div class="text">
+            <p class="title">Mobi Dick</p>
+            <blockquote>
+              Round the world! There is much in that sound to inspire proud feelings; but whereto does all that
+              circumnavigation conduct? Only through numberless perils to the very point whence we started, where those
+              that we left behind secure, were all the time before us.
+            </blockquote>
+            <p class="author">Herman Melville</p>
+          </div>
+          <div class="user">
+            <div class="likes">
+              <span class="material-icons">
+                star_rate
+              </span>
+              <p>28</p>
+            </div>
+            <div class="edit">
+              <span class="material-icons">
+                more_horiz
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="book-box">
+          <div class="cover">
+            <img src="book-cover.jpg" alt="apple" />
+          </div>
+          <div class="text">
+            <p class="title">The War of the Worlds</p>
+            <blockquote>
+              "What news from the common?" I said. "People seem fair silly about the common," said the woman over the
+              gate.
+            </blockquote>
+            <p class="author">H. G. Wells</p>
+          </div>
+          <div class="user">
+            <div class="likes">
+              <span class="material-icons">
+                star_rate
+              </span>
+              <p>19</p>
+            </div>
+            <div class="edit">
+              <span class="material-icons">
+                more_horiz
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="book-box">
+          <div class="cover">
+            <img src="book-cover.jpg" alt="apple" />
+          </div>
+          <div class="text">
+            <p class="title">At the Earth's Core</p>
+            <blockquote>
+              I wondered why these agile creatures required connecting bridges between the trees, but later when I saw
+              the motley aggregation of half-savage beasts which they kept within their village I realized the necessity
+              for the pathways.
+            </blockquote>
+            <p class="author">Edgar Rice Burroughs</p>
+          </div>
+          <div class="user">
+            <div class="likes">
+              <span class="material-icons">
+                star_rate
+              </span>
+              <p>8</p>
+            </div>
+            <div class="edit">
+              <span class="material-icons">
+                more_horiz
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="book-box">
+          <div class="cover">
+            <img src="book-cover.jpg" alt="apple" />
+          </div>
+          <div class="text">
+            <p class="title">A Princess of Mars</p>
+            <blockquote>
+              I drew rein on a little level promontory overlooking the trail below and to my left, and saw the party of
+              pursuing savages disappearing around the point of a neighboring peak.
+            </blockquote>
+            <p class="author">Edgar Rice Burroughs</p>
+          </div>
+          <div class="user">
+            <div class="likes">
+              <span class="material-icons">
+                star_rate
+              </span>
+              <p>11</p>
+            </div>
+            <div class="edit">
+              <span class="material-icons">
+                more_horiz
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="book-box">
+          <div class="cover">
+            <img src="book-cover.jpg" alt="apple" />
+          </div>
+          <div class="text">
+            <p class="title">Alice in Wonderland</p>
+            <blockquote>
+              The Hatter shook his head mournfully. 'Not I!' he replied. 'We quarrelled last March–just before he went
+              mad, you know--'
+            </blockquote>
+            <p class="author">Lewis Carroll</p>
+          </div>
+          <div class="user">
+            <div class="likes">
+              <span class="material-icons">
+                star_rate
+              </span>
+              <p>21</p>
+            </div>
+            <div class="edit">
+              <span class="material-icons">
+                more_horiz
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="book-box">
+          <div class="cover">
+            <img src="book-cover.jpg" alt="apple" />
+          </div>
+          <div class="text">
+            <p class="title">The Scarlet Plague</p>
+            <blockquote>
+              It was at this point that Hare-Lip rose to his feet, an expression of huge contempt on his face.Granser,"
+              he announced, "you make me sick with your gabble.
+            </blockquote>
+            <p class="author">Jack London</p>
+          </div>
+          <div class="user">
+            <div class="likes">
+              <span class="material-icons">
+                star_rate
+              </span>
+              <p>13</p>
+            </div>
+            <div class="edit">
+              <span class="material-icons">
+                more_horiz
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="book-box">
+          <div class="cover">
+            <img src="book-cover.jpg" alt="apple" />
+          </div>
+          <div class="text">
+            <p class="title">Around the World in 80 Days</p>
+            <blockquote>
+              Nothing could be more simple. Indeed, it was all so simple that Fix and Passepartout felt their hearts
+              beating as if they would crack. They were listening for the whistle agreed upon, when suddenly savage
+              cries resounded in the air, accompanied by reports which certainly did not issue from the car where the
+              duellists were.
+            </blockquote>
+            <p class="author">L. Frank Baum</p>
+          </div>
+          <div class="user">
+            <div class="likes">
+              <span class="material-icons">
+                star_rate
+              </span>
+              <p>18</p>
+            </div>
+            <div class="edit">
+              <span class="material-icons">
+                more_horiz
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end GRID VIEW  -->
+
+
+
+
+
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
