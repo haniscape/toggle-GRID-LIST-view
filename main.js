@@ -6,7 +6,6 @@ viewToggler.forEach(function (toggler) {
     viewToggler.forEach(function (toggler) {
       toggler.classList.remove('active');
     });
-
     toggler.classList.add('active');
 
     booksView.forEach(function (viewNow) {

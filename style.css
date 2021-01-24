@@ -13,15 +13,14 @@ body {
 
 .wrapper {
   width: 90%;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 
 /* ----------------------------------- */
 /*  Header  */
 /* ----------------------------------- */
 header {
-  margin-bottom: 25px;
-  padding: 20px 0 5px;
+  padding: 40px 0 25px;
   border-radius: 3px;
   display: flex;
   justify-content: space-between;
@@ -50,10 +49,70 @@ header ul li.active {
 }
 
 /* ----------------------------------- */
-/*  Books - Grid View */
+/*  TABLE HEAD - - only in List View   */
 /* ----------------------------------- */
 
-.books.grid-view {
+.books #table-head {
+  display: none;
+}
+
+.books.list-view #table-head {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-self: flex-start;
+  color: #666666;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+#table-head .text {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.text #title {
+  width: 20%;
+}
+.text #quote {
+  width: 65%;
+}
+.text #author {
+  width: 15%;
+}
+
+#table-head .cover {
+  align-items: flex-end;
+  background-color: transparent;
+}
+#table-head .user {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  background-color: transparent;
+}
+
+#title,
+#quote,
+#likes {
+  text-align: left;
+}
+
+#cover {
+  text-align: center;
+}
+
+#table-head #author {
+  text-align: right;
+  background-color: transparent;
+}
+
+/* ----------------------------------- */
+/*  Grid View - - BOOKS wrapper  */
+/* ----------------------------------- */
+
+.books {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -80,16 +139,6 @@ header ul li.active {
 }
 
 /* ----------------------------------- */
-/*  Books - List View */
-/* ----------------------------------- */
-.books.list-view {
-  display: grid;
-  grid-template-columns: repeat(1, 4fr);
-  justify-items: center;
-  background: #fff;
-}
-
-/* ----------------------------------- */
 /*   Book Box - - Grid View */
 /* ----------------------------------- */
 
@@ -100,7 +149,6 @@ header ul li.active {
   background-color: #cdf5ed;
   border-radius: 3px;
   text-align: center;
-  position: relative;
 }
 
 .book-box .cover {
@@ -111,9 +159,8 @@ header ul li.active {
   flex-direction: row;
   align-items: flex-start;
   padding: 15px;
-  margin-bottom: 40px;
 }
-.cover img {
+.book-box .cover img {
   width: 100%;
   border: 1px solid grey;
 }
@@ -124,7 +171,7 @@ header ul li.active {
   align-items: flex-start;
   float: right;
   background: #fff;
-  padding: 15px 10px 30px 10px;
+  padding: 15px 10px 0;
   min-height: 100%;
   text-align: left;
 }
@@ -134,7 +181,7 @@ header ul li.active {
   font-weight: 600;
 }
 
-blockquote {
+.book-box blockquote {
   font-size: 12px;
   font-weight: 300;
   margin-top: 10px;
@@ -155,8 +202,9 @@ blockquote {
   display: flex;
   align-items: center;
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  margin-top: auto;
+  height: 40px;
+  transform: translateY(-40px);
 }
 
 .book-box .likes {
@@ -167,44 +215,235 @@ blockquote {
 }
 
 .book-box .edit {
-  align-self: baseline;
-  padding: 5px 10px;
+  padding: 0 10px;
   cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  cursor: pointer;
+  height: 100%;
 }
 
-.book-box .edit.clicked {
-  background-color: grey;
+.book-box .edit:hover,
+.book-box .edit:active {
+  background-color: #404040;
   color: #fff;
 }
 
 .book-box div.sub-menu {
-  background-color: grey;
+  background-color: #404040;
   color: #fff;
 
   display: none;
 }
 
-/* ----------------------------------- */
-/*   Book Box - - List View */
-/* ----------------------------------- */
-
-.book-box.list-view {
-  display: flex;
-  flex-wrap: nowrap;
-  background: #fff;
-  border: 1px solid #e2efe1;
-  margin: 10px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
+.book-box div.sub-menu {
+  display: none;
 }
 
-.book-box .text.list-view {
+.book-box .edit:active {
+  position: relative;
+}
+
+.book-box .dropdown-content {
+  display: none;
+}
+
+/* ----------------------------------- */
+/*   Grid View - - DROPD DOWN  */
+/* ----------------------------------- */
+.book-box.dropped .dropdown-content {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  text-align: right;
+  padding: 11px;
+  z-index: 999;
+  background-color: #404040;
+  color: #fff;
+  overflow: hidden;
+  font-size: 13px;
+  display: block;
+}
+
+/* ----------------------------------- */
+/*  List View - - BOOKS wrapper  */
+/* ----------------------------------- */
+.books.list-view {
+  display: block;
+  width: fit-content;
+  justify-items: center;
+  padding-bottom: 50px;
+}
+
+/* ----------------------------------- */
+/*   List View - - BOOK BOX  */
+/* ----------------------------------- */
+
+.books.list-view .book-box {
+  display: flex;
+  border: 1px solid #8e978d;
+  background-color: #cdf5ed;
+  text-align: left;
+  height: 70px;
+}
+
+@media (max-width: 1000px) {
+  .books.list-view .book-box {
+    height: 100px;
+  }
+  .books.list-view blockquote {
+    width: 50% !important;
+  }
+  .books.list-view .user {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 10% !important;
+  }
+  .books.list-view .cover {
+    width: 10% !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .books.list-view .book-box {
+    height: 140px;
+  }
+
+  .books.list-view .text {
+    width: 66% !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+  }
+  .books.list-view .title {
+    width: 100% !important;
+  }
+
+  .books.list-view blockquote {
+    width: 100% !important;
+    -webkit-line-clamp: 4 !important;
+  }
+  .books.list-view .author {
+    width: 100% !important;
+  }
+
+  .books.list-view .user {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 17% !important;
+  }
+  .books.list-view .cover {
+    width: 17% !important;
+  }
+}
+
+/* Text Area */
+.books.list-view .text {
   width: 80%;
   flex-direction: row;
   order: -1;
-  flex: 1 0 70%;
   justify-content: space-between;
-  padding: 20px;
-  align-items: baseline;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.books.list-view .title {
+  font-size: 14px;
+  font-weight: 600;
+  width: 20%;
+  padding-right: 10px;
+}
+
+.books.list-view blockquote {
+  font-size: 12px;
+  font-weight: 300;
+  color: #666666;
+  width: calc(65%);
+  margin: 0;
+  text-align: left;
+  /* truncating text more than 2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.books.list-view .author {
+  color: #919191;
+  font-size: 11px;
+  font-weight: 300;
+  margin: 0;
+  width: 15%;
+  text-align: right;
+}
+
+/* book cover area */
+.books.list-view .cover {
+  width: 5%;
+  background-color: #cdf5ed;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+.books.list-view .cover img {
+  border: 1px solid grey;
+  width: 60%;
+}
+
+/*  user tools area */
+.books.list-view .user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15%;
+  background-color: #fff;
+  transform: none;
+  height: 100%;
+}
+
+.books.list-view .likes {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 12px;
+  padding: 5px 10px;
+  width: 60px;
+}
+
+.books.list-view .edit {
+  align-self: center;
+  padding: 5px 10px;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+}
+
+.books.list-view .edit:hover,
+.books.list-view .edit:active {
+  background-color: #404040;
+  color: #fff;
+}
+
+/* SUBMENU  */
+.books.list-view div.sub-menu {
+  background-color: #404040;
+  color: #fff;
+  display: none;
+}
+
+.books.list-view div.sub-menu {
+  display: none;
+}
+
+.books.list-view .edit:active {
+  position: relative;
+}
+
+.books.list-view .dropdown-content {
+  display: none;
 }

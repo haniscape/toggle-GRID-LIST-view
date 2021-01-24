@@ -33,8 +33,23 @@
 
     <!-- Start BOOKS VIEW -->
     <main>
-      <div class="books grid-view">
 
+      <div class="books">
+        <!-- TABLE HEAD - - works only in List View -->
+        <div id="table-head">
+          <div class="text">
+            <div id="title">Title</div>
+            <div id="quote">Quote</div>
+            <div id="author">Author</div>
+          </div>
+          <div class="cover">
+            <div id="cover">Cover</div>
+          </div>
+          <div class="user">
+            <div class="likes">Likes</div>
+          </div>
+        </div>
+        <!-- Start of BOOK BOXES -->
         <div class="book-box">
           <div class="cover">
             <img src="book-cover.jpg" alt="apple" />
@@ -55,15 +70,15 @@
               </span>
               <p>16</p>
             </div>
-            <div class="edit" onclick="subMenu('edit');">
+            <div class="edit">
               <span class="material-icons">
                 more_horiz
               </span>
             </div>
-            <div class="sub-menu">sadkfszxgjxdjh</div>
-
-
           </div>
+
+          <div class="dropdown-content">sadkfszxgjxdjh</div>
+
         </div>
 
 
@@ -267,7 +282,6 @@
         </div>
       </div>
       <!-- end GRID VIEW  -->
-
 
 
 
