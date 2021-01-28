@@ -91,6 +91,7 @@ header ul li.active {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  justify-content: center;
   background-color: transparent;
 }
 
@@ -298,7 +299,7 @@ header ul li.active {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .books.list-view .book-box {
     height: 140px;
   }
