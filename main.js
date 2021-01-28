@@ -1,3 +1,5 @@
+// making a toggler icon to show GRID/LIST views
+
 var viewToggler = document.querySelectorAll('header ul li');
 var booksView = document.querySelectorAll('.books');
 

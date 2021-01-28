@@ -9,6 +9,7 @@ body {
   list-style: none;
   background: #f5f5f5;
   color: #333333;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -139,6 +140,16 @@ header ul li.active {
 }
 
 /* ----------------------------------- */
+/*  List View - - BOOKS wrapper  */
+/* ----------------------------------- */
+.books.list-view {
+  display: block;
+  width: fit-content;
+  justify-items: center;
+  padding-bottom: 50px;
+}
+
+/* ----------------------------------- */
 /*   Book Box - - Grid View */
 /* ----------------------------------- */
 
@@ -220,9 +231,10 @@ header ul li.active {
   position: relative;
   display: flex;
   align-items: center;
-  align-self: center;
+  justify-content: center;
   cursor: pointer;
   height: 100%;
+  width: 20%;
 }
 
 .book-box .edit:hover,
@@ -244,37 +256,6 @@ header ul li.active {
 
 .book-box .edit:active {
   position: relative;
-}
-
-.book-box .dropdown-content {
-  display: none;
-}
-
-/* ----------------------------------- */
-/*   Grid View - - DROPD DOWN  */
-/* ----------------------------------- */
-.book-box.dropped .dropdown-content {
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  text-align: right;
-  padding: 11px;
-  z-index: 999;
-  background-color: #404040;
-  color: #fff;
-  overflow: hidden;
-  font-size: 13px;
-  display: block;
-}
-
-/* ----------------------------------- */
-/*  List View - - BOOKS wrapper  */
-/* ----------------------------------- */
-.books.list-view {
-  display: block;
-  width: fit-content;
-  justify-items: center;
-  padding-bottom: 50px;
 }
 
 /* ----------------------------------- */
@@ -302,14 +283,36 @@ header ul li.active {
     margin: 0;
     width: 10% !important;
   }
+  .books.list-view .edit {
+    width: 100%;
+    height: 40%;
+  }
   .books.list-view .cover {
     width: 10% !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .books.list-view .likes {
+    flex-direction: column-reverse;
   }
 }
 
 @media (max-width: 400px) {
   .books.list-view .book-box {
     height: 140px;
+  }
+
+  #title,
+  #cover,
+  #likes {
+    align-self: baseline;
+  }
+
+  #table-head .cover,
+  #table-head .user {
+    align-self: flex-end;
+    justify-content: center;
   }
 
   .books.list-view .text {
@@ -417,7 +420,6 @@ header ul li.active {
 
 .books.list-view .edit {
   align-self: center;
-  padding: 5px 10px;
   cursor: pointer;
   position: relative;
   height: 100%;
@@ -429,21 +431,20 @@ header ul li.active {
   color: #fff;
 }
 
-/* SUBMENU  */
-.books.list-view div.sub-menu {
+/* ----------------------------------- */
+/*    DROPD DOWN  */
+/* ----------------------------------- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: max-content;
+  text-align: right;
+  padding: 11px;
+  z-index: 999;
   background-color: #404040;
   color: #fff;
-  display: none;
-}
-
-.books.list-view div.sub-menu {
-  display: none;
-}
-
-.books.list-view .edit:active {
-  position: relative;
-}
-
-.books.list-view .dropdown-content {
+  overflow: hidden;
+  font-size: 13px;
   display: none;
 }
