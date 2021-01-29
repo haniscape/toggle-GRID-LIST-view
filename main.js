@@ -4,6 +4,7 @@ var viewToggler = document.querySelectorAll('header ul li');
 var booksView = document.querySelectorAll('.books');
 
 viewToggler.forEach(function (toggler) {
+  toggler.stopPropagation;
   toggler.addEventListener('click', function () {
     viewToggler.forEach(function (toggler) {
       toggler.classList.remove('active');
@@ -37,14 +38,13 @@ function toggle(e) {
   // the nodeType property will return 1 if the node is an ELEMENT
   while (menu && menu.nodeType != 1) {
     menu = menu.nextSibling;
+    likes.classList.toggle('likie');
   }
   if (!menu) return;
-  likes.classList.remove('likie');
 
   // showing the submenu and styling the area next to the button
   if (menu.style.display !== 'block') {
     menu.style.display = 'block';
-    likes.classList.toggle('likie');
     if (toClose) toClose.style.display = 'none';
     toClose = menu;
   } else {
@@ -57,7 +57,6 @@ function toggle(e) {
 window.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.edit').forEach(function (btn) {
     btn.addEventListener('click', toggle, true);
-    likes.classList.remove('likie');
   });
 });
 
