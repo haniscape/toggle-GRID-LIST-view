@@ -224,6 +224,13 @@ header ul li.active {
   align-items: center;
   font-size: 12px;
   padding: 5px 10px;
+  height: 100%;
+  width: 80%;
+}
+
+.likie {
+  background-color: #3e98c5;
+  color: #fff;
 }
 
 .book-box .edit {
@@ -438,10 +445,10 @@ header ul li.active {
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  width: 100%;
+  min-width: 170px;
   height: max-content;
   text-align: right;
-  padding: 11px;
+  padding: 10px;
   z-index: 999;
   background-color: #404040;
   color: #fff;

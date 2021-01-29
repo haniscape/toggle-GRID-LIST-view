@@ -15,3 +15,54 @@ viewToggler.forEach(function (toggler) {
     });
   });
 });
+
+// Dropdown Menu for the Edit buttons
+/////////////////////////////////////////////
+
+//toggle dropdown menu open/close
+
+// closing function
+var toClose = false;
+function closeAll() {
+  toClose.style.display = 'none';
+  likes.classList.remove('likie');
+}
+
+function toggle(e) {
+  e.stopPropagation();
+  var btn = this;
+  var menu = btn.nextSibling;
+  var likes = btn.previousElementSibling;
+
+  // the nodeType property will return 1 if the node is an ELEMENT
+  while (menu && menu.nodeType != 1) {
+    menu = menu.nextSibling;
+  }
+  if (!menu) return;
+  likes.classList.remove('likie');
+
+  // showing the submenu and styling the area next to the button
+  if (menu.style.display !== 'block') {
+    menu.style.display = 'block';
+    likes.classList.toggle('likie');
+    if (toClose) toClose.style.display = 'none';
+    toClose = menu;
+  } else {
+    menu.style.display = 'none';
+    toClose = false;
+  }
+}
+
+// Click event listener
+window.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.edit').forEach(function (btn) {
+    btn.addEventListener('click', toggle, true);
+    likes.classList.remove('likie');
+  });
+});
+
+window.onclick = function (event) {
+  if (toClose) {
+    closeAll.call(event.target);
+  }
+};
